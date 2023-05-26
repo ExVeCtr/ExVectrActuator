@@ -9,5 +9,5 @@ function(addExVectrDependency libName)
     target_include_directories(${PROJECT_NAME} PUBLIC ../${libName}/include/)
 endfunction()
 
-addExVectrDependency(Core)
-addExVectrDependency(HAL)
+addExVectrDependency(ExVectrCore)
+addExVectrDependency(ExVectrHal)
