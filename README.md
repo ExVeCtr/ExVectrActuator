@@ -1,4 +1,4 @@
-# ExVectr Library Template
-This repository is a template for use to create ExVectr libraries. This also contains instuctions of what where goes, naming convetions etc.
-Its only a few files. Just read them. Also recommended to check the ExVectrProjectTemplate.
+# ExVectrActuator
+ExVectrActuator implements control over actuators for use in ExVectr projects.
+ExVectrActuator requires Core and HAL to work.
 ## **This project is under initial development. Things will probably break.**
