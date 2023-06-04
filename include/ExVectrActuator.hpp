@@ -4,7 +4,13 @@
 
 
 namespace VCTR
-{} // namespace VCTR The EXVECTR Library
+{
+
+    namespace ACTR
+    {} // namespace ACTR for ExVectrActuator
+
+
+} // namespace VCTR The EXVECTR Library
 
 
 
