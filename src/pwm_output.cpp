@@ -1,6 +1,6 @@
 #include "ExVectrCore/print.hpp"
 
-#include "ExVectrHAL/output.hpp"
+#include "ExVectrHAL/analog_output.hpp"
 #include "ExVectrHAL/pin_pwm.hpp"
 
 #include "ExVectrActuator/pwm_output.hpp"

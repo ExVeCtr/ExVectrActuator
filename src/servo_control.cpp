@@ -2,7 +2,7 @@
 #include "ExVectrCore/scheduler2.hpp"
 #include "ExVectrCore/task_types.hpp"
 
-#include "ExVectrHAL/output.hpp"
+#include "ExVectrHAL/digital_output.hpp"
 #include "ExVectrHAL/pin_pwm.hpp"
 
 #include "ExVectrActuator/pwm_output.hpp"
