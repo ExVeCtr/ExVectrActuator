@@ -35,7 +35,7 @@ namespace VCTR
             }
         }
 
-        int32_t HBridge2Wire::writable()
+        size_t HBridge2Wire::writable()
         {
             return 1;
         }
@@ -100,7 +100,7 @@ namespace VCTR
             }
         }
 
-        int32_t HBridge3Wire::writable()
+        size_t HBridge3Wire::writable()
         {
             return 1;
         }

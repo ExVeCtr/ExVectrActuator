@@ -44,9 +44,9 @@ namespace VCTR
             bool setOutputParam(HAL::IO_PARAM_t param, int32_t value) override;
 
             /**
-             * @returns number of values that can be written at the moment. -1 means no limit to data size.
+             * @returns number of values that can be written at the moment.
              */
-            int32_t writable() override;
+            size_t writable() override;
 
             /**
              * @brief Writes the values from values pointer.
@@ -105,7 +105,7 @@ namespace VCTR
             /**
              * @returns number of values that can be written at the moment. -1 means no limit to data size.
              */
-            int32_t writable() override;
+            size_t writable() override;
 
             /**
              * @brief Writes the values from values pointer.
