@@ -27,10 +27,12 @@ namespace VCTR
 
         float Servo_Control::getAngleSet()
         {
+            return 0;
         }
 
         float Servo_Control::getAngleReal()
         {
+            return 0;
         }
 
     }
