@@ -43,9 +43,16 @@ namespace VCTR
             float offset_ = 0;
             // Used to map the value to the dutycycle needed to achieve correct pulses.
             float factor_ = 0;
+            // Used to map the value to the dutycycle needed to achieve correct pulses.
+            float interval_ = 0.5;
 
             // Current output value.
             float currentValue_ = 0;
+
+            // Only output when true.
+            bool outputEnabled_ = true;
+
+            PWM_Output_Protocol pwmProtocol_ = PWM_Output_Protocol::STANDARD;
 
         public:
             /**
@@ -55,6 +62,9 @@ namespace VCTR
              * @param pwmProtocol Protocol to use. Defaults to Standard.
              */
             PWM_Output(HAL::PinPWM &pwmPin, PWM_Output_Protocol pwmProtocol = PWM_Output_Protocol::STANDARD);
+
+
+            void init();    
 
             /**
              * @brief Sets the value to output, from 0 to 1.
@@ -68,6 +78,12 @@ namespace VCTR
              * @return current value from 0 to 1.
              */
             float getValue();
+
+            /**
+             * @brief Enables or disables the output. If disabled, then the output is set to constant 0. (Not zero PPM value equivilant, the PWM output duty cycle is set to zero)
+             * @param enable True to enable, false to disable.
+             */
+            void enableOutput(bool enable);
         };
 
     } // namespace ACTR for ExVectrActuator
