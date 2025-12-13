@@ -26,8 +26,11 @@ namespace VCTR
             // PWM pin to use.
             PWM_Output pwm_;
 
-            float currentPosition_;
-            float minPos_, maxPos, maxVel, accel;
+            float currentPosition_, targetPosition_;
+            float currentVelocity_;
+            float minPos_, maxPos_, maxVel_, accel_;
+
+            int64_t lastUpdate_ = 0; // Last time the servo was updated.
 
         public:
             /**
@@ -40,7 +43,7 @@ namespace VCTR
              * @param maxAccel The Maximum acceleration to move the servo at.
              * @param pwmProtocol Protocol to use. Defaults to Standard.
              */
-            Servo_Control(HAL::PinPWM &pwmPin, float maxPosition, float minPosition, float maxVel, float maxAccel, PWM_Output_Protocol pwmProtocol = PWM_Output_Protocol::STANDARD);
+            Servo_Control(float maxPosition, float minPosition, float maxVel, float maxAccel, HAL::PinPWM &pwmPin, PWM_Output_Protocol pwmProtocol = PWM_Output_Protocol::STANDARD);
 
             /**
              * @brief Sets the servo position setpoint ot reach using the given max accel and velocity.
@@ -57,6 +60,9 @@ namespace VCTR
              * @returns the actual current output value.
              */
             float getAngleReal();
+
+            
+            void taskThread() override;
         };
 
     } // namespace ACTR for ExVectrActuator
