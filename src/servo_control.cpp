@@ -51,8 +51,8 @@ namespace VCTR
         void Servo_Control::taskThread() 
         {
             // Simulate the servo movement using a simple physics model and set the PWM output accordingly
-            float dTime = (Core::NOW() - lastUpdate_) / Core::SECONDS;
-            lastUpdate_ = Core::NOW();
+            float dTime = (Core::NowNs() - lastUpdate_) / Core::SECONDS;
+            lastUpdate_ = Core::NowNs();
             float dHTS = 0.5 * dTime *dTime;
 
             // Calculate the current servo position based on the current velocity and acceleration
